@@ -54,3 +54,13 @@ def nthIndexOf(liste: list, n: int, elmt: int) -> int:
     return a
 
 
+def creerListeSansDoublon(liste: list) -> list:
+    i = 0
+    liste2 = []
+    while i != len(liste):
+        if liste[i] not in liste2:
+            liste2 += [liste[i]]
+        i += 1
+    return liste2
+
+
