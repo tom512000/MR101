@@ -35,3 +35,10 @@ def firstIndexOf(liste: list, entier: int) -> int:
     return j
 
 
+def lastIndexOf(liste: list, entier: int) -> int:
+    j = -1
+    for i in range(len(liste)):
+        if liste[i] == entier:
+            j = i
+    return j
+
