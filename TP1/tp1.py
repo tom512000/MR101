@@ -14,3 +14,12 @@ def compter(lst: list, elmt: int) -> int:
         if lst[i] == elmt:
             iter += 1
     return iter
+
+
+def contient(liste: list, entier: int) -> bool:
+    bl = False
+    for i in range(len(liste)):
+        if liste[i] == entier:
+            bl = True
+    return bl
+
