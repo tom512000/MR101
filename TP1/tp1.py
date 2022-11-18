@@ -64,3 +64,17 @@ def creerListeSansDoublon(liste: list) -> list:
     return liste2
 
 
+def supprimerDoublons(liste: list) -> list:
+    i = 0
+    liste2 = []
+    while i != len(liste):
+
+        if liste[i] not in liste2:
+            liste2 += [liste[i]]
+        else:
+            del liste[i]
+            i -= 1
+        i += 1
+    return liste
+
+
