@@ -23,3 +23,15 @@ def contient(liste: list, entier: int) -> bool:
             bl = True
     return bl
 
+
+def firstIndexOf(liste: list, entier: int) -> int:
+    j = -1
+    i = 0
+    while i != len(liste):
+        if liste[i] == entier:
+            j = i
+            break
+        i += 1
+    return j
+
+
