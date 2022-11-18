@@ -1,10 +1,10 @@
-import random
+from random import randint
 
 
 def getRandomList(taille: int, mn: int, mx: int) -> list:
     liste = []
     for i in range(taille):
-        liste += [random.randint(mn, mx)]
+        liste += [randint(mn, mx)]
     return liste
 
 
@@ -27,10 +27,9 @@ def contient(liste: list, entier: int) -> bool:
 def firstIndexOf(liste: list, entier: int) -> int:
     j = -1
     i = 0
-    while i != len(liste):
+    while i != len(liste) and j == -1:
         if liste[i] == entier:
             j = i
-            break
         i += 1
     return j
 
@@ -41,4 +40,17 @@ def lastIndexOf(liste: list, entier: int) -> int:
         if liste[i] == entier:
             j = i
     return j
+
+
+def nthIndexOf(liste: list, n: int, elmt: int) -> int:
+    i = 0
+    a = -1
+    while i != len(liste) and n != 0:
+        if liste[i] == elmt:
+            n -= 1
+        if n == 0:
+            a = i
+        i += 1
+    return a
+
 
