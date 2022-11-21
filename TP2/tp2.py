@@ -44,3 +44,13 @@ def getIndexMin(liste: list) -> int:
     return idmin
 
 
+def getIndexMinFrom(liste: list, depart: int) -> int:
+    min = liste[depart]
+    idmin = depart
+    for i in range(depart+1, len(liste)):
+        if liste[i] < min:
+            min = liste[i]
+            idmin = i
+    return idmin
+
+
