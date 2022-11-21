@@ -64,17 +64,26 @@ def creerListeSansDoublon(liste: list) -> list:
     return liste2
 
 
-def supprimerDoublons(liste: list) -> list:
+def supprimerDoublons(liste: list) -> None:
     i = 0
     liste2 = []
     while i != len(liste):
-
         if liste[i] not in liste2:
             liste2 += [liste[i]]
         else:
             del liste[i]
             i -= 1
         i += 1
-    return liste
+    return None
 
 
+def enumerer(liste: list) -> None:
+    dictio = {}
+    for i in range(len(liste)):
+        if liste[i] not in dictio:
+            dictio[liste[i]] = [i]
+        else:
+            dictio[liste[i]] += [i]
+    for cle, valeur in dictio.items():
+        print(f"Position(s) du {cle} : {valeur}")
+    return None
