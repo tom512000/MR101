@@ -54,3 +54,17 @@ def getIndexMinFrom(liste: list, depart: int) -> int:
     return idmin
 
 
+def triSelection(liste: list) -> None:
+    n = len(liste)
+    for i in range(0, n):
+        min = i
+        for j in range(i + 1, n):
+            if liste[j] < liste[min]:
+                min = j
+        if min is not i:
+            temp = liste[i]
+            liste[i] = liste[min]
+            liste[min] = temp
+    return None
+
+
