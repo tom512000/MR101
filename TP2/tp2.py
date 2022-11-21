@@ -26,3 +26,11 @@ def triBulles(liste: list) -> None:
     return None
 
 
+def getMin(liste: list) -> int:
+    min = liste[0]
+    for i in range(1, len(liste)):
+        if liste[i] < min:
+            min = liste[i]
+    return min
+
+
