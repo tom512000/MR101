@@ -1,7 +1,11 @@
+from view.Canvas import *
+from view.Rect import *
+
+
 def estTrie(liste: list) -> bool:
     bl = True
-    for i in range(len(liste)-1):
-        if liste[i] > liste[i+1]:
+    for i in range(len(liste) - 1):
+        if liste[i] > liste[i + 1]:
             bl = False
     return bl
 
@@ -18,9 +22,9 @@ def triBulles(liste: list) -> None:
     modif = True
     while modif:
         modif = False
-        for i in range(len(liste)-1):
-            if liste[i] > liste[i+1]:
-                echanger(liste, i, i+1)
+        for i in range(len(liste) - 1):
+            if liste[i] > liste[i + 1]:
+                echanger(liste, i, i + 1)
                 modif = True
         etape += 1
     return None
@@ -47,7 +51,7 @@ def getIndexMin(liste: list) -> int:
 def getIndexMinFrom(liste: list, depart: int) -> int:
     min = liste[depart]
     idmin = depart
-    for i in range(depart+1, len(liste)):
+    for i in range(depart + 1, len(liste)):
         if liste[i] < min:
             min = liste[i]
             idmin = i
@@ -71,8 +75,8 @@ def triSelection(liste: list) -> None:
 def deplacerCase(liste: list, i: int) -> None:
     j = i
     while j != 0:
-        if liste[j] < liste[j-1]:
-            echanger(liste, j, j-1)
+        if liste[j] < liste[j - 1]:
+            echanger(liste, j, j - 1)
         j -= 1
     return None
 
@@ -81,8 +85,25 @@ def triInsertion(liste: list) -> None:
     for i in range(1, len(liste)):
         x = liste[i]
         j = i
-        while j > 0 and liste[j-1] > x:
+        while j > 0 and liste[j - 1] > x:
             deplacerCase(liste, j)
             j -= 1
     return None
 
+
+def triSelectionRect(liste: list, tps: float) -> list:
+    for i in range(0, len(liste)):
+        min = i
+        for j in range(i + 1, len(liste)):
+            if liste[j].getHeight() < liste[min].getHeight():
+                min = j
+        if min is not i:
+            tmp = liste[i]
+            tmp.unsetX(tps)
+            liste[i] = liste[min]
+            liste[i].setX(i, tps)
+            liste[min] = tmp
+            liste[min].setX(min, tps)
+            liste[i].setPlaced()
+        liste[i].setFill("lime")
+    return liste
