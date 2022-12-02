@@ -31,3 +31,9 @@ d = [1, 3, 3, 4, 6, 8, 0, 6, 4, 9]
 print(d)
 deplacerCase(d, 6)
 print(d)
+
+print("\nFonction: triInsertion :")
+e = [1, 3, 3, 4, 6, 8, 0, 6, 4, 9]
+print(e)
+triInsertion(e)
+print(e)
