@@ -105,7 +105,6 @@ def triSelectionRect(liste: list, tps: float) -> None:
             liste[min] = tmp
             liste[min].setX(min, tps)
             liste[i].setPlaced()
-        liste[i].setFill("lime")
     return None
 
 
@@ -115,15 +114,35 @@ def triBullesRect(liste: list, tps: float) -> None:
     while modif:
         modif = False
         for i in range(len(liste) - 1):
-            if liste[i].getHeight() > liste[i+1].getHeight():
+            if liste[i].getHeight() > liste[i + 1].getHeight():
                 tmp = liste[i]
                 tmp.unsetX(tps)
-                liste[i] = liste[i+1]
+                liste[i] = liste[i + 1]
                 liste[i].setX(i, tps)
-                liste[i+1] = tmp
-                liste[i+1].setX(i+1, tps)
+                liste[i + 1] = tmp
+                liste[i + 1].setX(i + 1, tps)
                 liste[i].setPlaced()
                 modif = True
-                liste[i].setFill("lime")
         etape += 1
+    return None
+
+
+def triInsertionRect(liste: list, tps: float) -> None:
+    for i in range(1, len(liste)):
+        x = liste[i].getHeight()
+        j = i
+        while j > 0 and liste[j-1].getHeight() > x:
+            # Déplacer case
+            a = i
+            while a != 0:
+                if liste[a].getHeight() < liste[a - 1].getHeight():
+                    tmp = liste[a]
+                    tmp.unsetX(tps)
+                    liste[a] = liste[a - 1]
+                    liste[a].setX(a, tps)
+                    liste[a - 1] = tmp
+                    liste[a - 1].setX(a - 1, tps)
+                    liste[a].setPlaced()
+                a -= 1
+            j -= 1
     return None
