@@ -68,3 +68,12 @@ def triSelection(liste: list) -> None:
     return None
 
 
+def deplacerCase(liste: list, i: int) -> None:
+    j = i
+    while j != 0:
+        if liste[j] < liste[j-1]:
+            echanger(liste, j, j-1)
+        j -= 1
+    return None
+
+
