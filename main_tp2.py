@@ -40,7 +40,7 @@ print(e)
 triInsertion(e)
 print(e)
 
-print("\nFonction: triSelectionRect :")
+print("\nFonction: triSelectionRect / triBullesRect / triInsertionRect :")
 nb = 20
 tps = 0.5
 f = []
@@ -51,6 +51,7 @@ g = []
 for j in range(len(f)):
     g += [Rect(j, f[j], cv)]
 print("Lancement du tri : cliquez dans la fenêtre", waitClick())
-triSelectionRect(g, tps)
+# triSelectionRect(g, tps)
+triBullesRect(g, tps)
+# triSelectionRect(g, tps)
 print("Fin du tri : cliquez pour finir", waitClick())
-

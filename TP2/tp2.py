@@ -91,7 +91,7 @@ def triInsertion(liste: list) -> None:
     return None
 
 
-def triSelectionRect(liste: list, tps: float) -> list:
+def triSelectionRect(liste: list, tps: float) -> None:
     for i in range(0, len(liste)):
         min = i
         for j in range(i + 1, len(liste)):
@@ -106,4 +106,24 @@ def triSelectionRect(liste: list, tps: float) -> list:
             liste[min].setX(min, tps)
             liste[i].setPlaced()
         liste[i].setFill("lime")
-    return liste
+    return None
+
+
+def triBullesRect(liste: list, tps: float) -> None:
+    etape = 1
+    modif = True
+    while modif:
+        modif = False
+        for i in range(len(liste) - 1):
+            if liste[i].getHeight() > liste[i+1].getHeight():
+                tmp = liste[i]
+                tmp.unsetX(tps)
+                liste[i] = liste[i+1]
+                liste[i].setX(i, tps)
+                liste[i+1] = tmp
+                liste[i+1].setX(i+1, tps)
+                liste[i].setPlaced()
+                modif = True
+                liste[i].setFill("lime")
+        etape += 1
+    return None
