@@ -54,4 +54,3 @@ class Chrono:
             res = str(j) + " jours - "
         res += f"{h:02d}:{m:02d}:{s:02d}.{ms:03d}"
         return res
-

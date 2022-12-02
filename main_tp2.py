@@ -1,9 +1,9 @@
 # main_tp2.py
-
 from TP1.tp1 import *
 from TP2.tp2 import *
 from view.Canvas import *
 from view.Rect import *
+from view.Chrono import *
 
 print("\nFonction estTrie :")
 print(estTrie([1]))
@@ -47,11 +47,44 @@ f = []
 for i in range(nb):
     f += [randint(20, 300)]
 cv = Canvas((getCanvasSizeFrom(f)))
-g = []
-for j in range(len(f)):
-    g += [Rect(j, f[j], cv)]
-print("Lancement du tri : cliquez dans la fenêtre", waitClick())
+#g = []
+#for j in range(len(f)):
+    #g += [Rect(j, f[j], cv)]
+#print("Lancement du tri : cliquez dans la fenêtre", waitClick())
 # triSelectionRect(g, tps)
 # triBullesRect(g, tps)
-triInsertionRect(g, tps)
-print("Fin du tri : cliquez pour finir", waitClick())
+# triInsertionRect(g, tps)
+#print("Fin du tri : cliquez pour finir", waitClick())
+
+# Temps de calcul :
+h = []
+for k in range(len(f)):
+    h += [Rect(k, f[k], cv)]
+# Tri selection
+Chrono.start()
+triSelectionRect(h, tps)
+Chrono.stop()
+x = Chrono.getTime()
+cv.clear()
+h = []
+for m in range(len(f)):
+    h += [Rect(m, f[m], cv)]
+# Tri à bulles
+Chrono.start()
+triBullesRect(h, tps)
+Chrono.stop()
+y = Chrono.getTime()
+cv.clear()
+for o in range(len(f)):
+    h += [Rect(o, f[o], cv)]
+# Tri insertion
+Chrono.start()
+triInsertionRect(h, tps)
+Chrono.stop()
+z = Chrono.getTime()
+cv.clear()
+# Temps
+print(f"Temps Tri Selection : {x}")
+print(f"Temps Tri à Bulles : {y}")
+print(f"Temps Tri Insertion : {z}")
+
