@@ -25,3 +25,6 @@ def test_indexOfSorted() -> None:
 
 
 test_indexOfSorted()
+
+print("Fonction getReponse : ")
+getReponse(12)

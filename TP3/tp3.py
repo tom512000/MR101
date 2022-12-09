@@ -20,3 +20,19 @@ def indexOfSorted(liste: list, val: int) -> tuple:
 def binarySearch(lst: list, val: list) -> int:
     return indexOf(lst, val)
 
+
+def getReponse(val: int) -> None:
+    ideb = 0
+    ifin = val
+    imilieu = (ideb + ifin) // 2
+    a = ''
+    while imilieu != val and a != 'E':
+        print(f"Proposition de l'ordinateur : {imilieu}")
+        a = input("Votre nombre est-il (E)gal, plus (G)rand ou plus (P)etit ? (tapez E, G ou P) : ")
+        if a == 'P':
+            ifin = val
+        elif a == 'G':
+            ideb = val
+        imilieu = (ideb + ifin) // 2
+    print(f"Proposition de l'ordinateur : {imilieu}")
+    return None
