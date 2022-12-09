@@ -24,7 +24,10 @@ def test_indexOfSorted() -> None:
     return None
 
 
-test_indexOfSorted()
+#test_indexOfSorted()
 
-print("Fonction getReponse : ")
-getReponse(12)
+print("Fonction getReponse :")
+#getReponse(12)
+
+print("Fonction devinerNombre :")
+devinerNombre(1, 10)
