@@ -9,3 +9,9 @@ def indexOf(liste: list, val: int) -> int:
         i += 1
     return a
 
+
+def indexOfSorted(liste: list, val: int) -> tuple:
+    i = 0
+    while i != len(liste) and liste[i] < val:
+        i += 1
+    return indexOf(liste, val), i
