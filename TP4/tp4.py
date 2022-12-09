@@ -11,3 +11,13 @@ def getRegularArray2D(nl: int, nc: int, mn: int, mx: int) -> list:
     return liste
 
 
+def isRegular(lst: list) -> bool:
+    a = True
+    i = 0
+    while i != len(lst)-1 and a != False:
+        if len(lst[i]) != len(lst[i + 1]):
+            a = False
+        i += 1
+    return a
+
+
