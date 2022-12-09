@@ -15,3 +15,8 @@ def indexOfSorted(liste: list, val: int) -> tuple:
     while i != len(liste) and liste[i] < val:
         i += 1
     return indexOf(liste, val), i
+
+
+def binarySearch(lst: list, val: list) -> int:
+    return indexOf(lst, val)
+
