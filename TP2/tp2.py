@@ -131,7 +131,7 @@ def triInsertionRect(liste: list, tps: float) -> None:
     for i in range(1, len(liste)):
         x = liste[i].getHeight()
         j = i
-        while j > 0 and liste[j-1].getHeight() > x:
+        while j > 0 and liste[j - 1].getHeight() > x:
             # Déplacer case
             a = i
             while a != 0:
@@ -146,3 +146,20 @@ def triInsertionRect(liste: list, tps: float) -> None:
                 a -= 1
             j -= 1
     return None
+
+
+def doQuickSort(liste: list, ideb: int, ifin: int) -> None:
+    pivot = liste[ideb]
+    i = ifin - 1
+    for j in range(ifin, ideb):
+        if liste[j] <= pivot:
+            i = i + 1
+            (liste[i], liste[j]) = (liste[j], liste[i])
+    (liste[i + 1], liste[ideb]) = (liste[ideb], liste[i + 1])
+    return i + 1
+
+
+def quickSort(liste: list) -> None:
+    for i in range(len(liste) - 1):
+        doQuickSort(liste, i, i + 1)
+        return None
