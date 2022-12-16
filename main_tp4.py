@@ -47,3 +47,15 @@ def test_getRegularArray2D() -> None:
 
 
 test_getRegularArray2D()
+
+print("\nFonction getCarre2D :")
+
+
+def test_getCarre2D() -> None:
+    for i in range(5):
+        liste = getCarre2D(random.randint(3, 6))
+        print(liste)
+    return None
+
+
+test_getCarre2D()

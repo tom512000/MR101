@@ -39,14 +39,21 @@ def getMax(lst: list) -> int:
     return a
 
 
-def getSize2D (liste: list) -> tuple:
+def getSize2D(liste: list) -> tuple:
     return len(liste), len(liste[0])
 
 
-
-
-
-
-
-
-
+def getCarre2D(n: int) -> list:
+    somme = n*(n**2 + 1)/2
+    nombres = []
+    for i in range(1, (n**2)+1):
+        nombres += [i]
+    random.shuffle(nombres)
+    tab = []
+    for i in range(n):
+        ligne = []
+        for j in range(n):
+            ligne += [nombres[0]]
+            del nombres[0]
+        tab += [ligne]
+    return tab
