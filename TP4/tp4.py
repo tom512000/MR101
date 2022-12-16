@@ -34,25 +34,13 @@ def getMax(lst: list) -> int:
     a = lst[0][0]
     for i in range(len(lst)):
         for j in range(len(lst[i])):
-            if lst[i][j] > a:
+            if lst[i][j] >= a:
                 a = lst[i][j]
     return a
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def getSize2D (liste: list) -> tuple:
+    return len(liste), len(liste[0])
 
 
 
