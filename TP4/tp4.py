@@ -44,9 +44,9 @@ def getSize2D(liste: list) -> tuple:
 
 
 def getCarre2D(n: int) -> list:
-    somme = n*(n**2 + 1)/2
+    somme = n * (n ** 2 + 1) / 2
     nombres = []
-    for i in range(1, (n**2)+1):
+    for i in range(1, (n ** 2) + 1):
         nombres += [i]
     random.shuffle(nombres)
     tab = []
@@ -57,3 +57,11 @@ def getCarre2D(n: int) -> list:
             del nombres[0]
         tab += [ligne]
     return tab
+
+
+def getSommeLignes(liste: list) -> list:
+    totlignes = len(liste)*[0]
+    for i in range(len(liste)):
+        for j in range(len(liste[i])):
+            totlignes[i] += liste[i][j]
+    return totlignes

@@ -59,3 +59,15 @@ def test_getCarre2D() -> None:
 
 
 test_getCarre2D()
+
+print("\nFonction getSommeLignes :")
+
+
+def test_getSommeLignes() -> None:
+    for i in range(4):
+        liste = getCarre2D(3)
+        print(f"{liste}, somme des lignes : {getSommeLignes(liste)}")
+    return None
+
+
+test_getSommeLignes()
