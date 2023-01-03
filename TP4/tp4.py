@@ -65,3 +65,13 @@ def getSommeLignes(liste: list) -> list:
         for j in range(len(liste[i])):
             totlignes[i] += liste[i][j]
     return totlignes
+
+
+def getSommeColonnes(liste: list) -> list:
+    totcolonnes = len(liste[0])*[0]
+    nb = -1
+    for j in range(len(totcolonnes)):
+        nb += 1
+        for i in range(len(liste)):
+            totcolonnes[nb] += liste[i][nb]
+    return totcolonnes
