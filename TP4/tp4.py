@@ -60,7 +60,7 @@ def getCarre2D(n: int) -> list:
 
 
 def getSommeLignes(liste: list) -> list:
-    totlignes = len(liste)*[0]
+    totlignes = len(liste) * [0]
     for i in range(len(liste)):
         for j in range(len(liste[i])):
             totlignes[i] += liste[i][j]
@@ -68,7 +68,7 @@ def getSommeLignes(liste: list) -> list:
 
 
 def getSommeColonnes(liste: list) -> list:
-    totcolonnes = len(liste[0])*[0]
+    totcolonnes = len(liste[0]) * [0]
     nb = -1
     for j in range(len(totcolonnes)):
         nb += 1
@@ -84,3 +84,12 @@ def getSommeDiagonale1(liste: list) -> int:
         nb += 1
         totdiag1 += liste[i][nb]
     return totdiag1
+
+
+def getSommeDiagonale2(liste: list) -> int:
+    totdiag2 = 0
+    nb = -1
+    for i in range(len(liste)-1, -1, -1):
+        nb += 1
+        totdiag2 += liste[i][nb]
+    return totdiag2

@@ -95,3 +95,15 @@ def test_getSommeDiagonale1() -> None:
 
 
 test_getSommeDiagonale1()
+
+print("\nFonction getSommeDiagonale2 :")
+
+
+def test_getSommeDiagonale2() -> None:
+    for i in range(4):
+        liste = getCarre2D(3)
+        print(f"{liste}, somme de la diagonale secondaire : {getSommeDiagonale2(liste)}")
+    return None
+
+
+test_getSommeDiagonale2()
