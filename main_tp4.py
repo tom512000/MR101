@@ -78,8 +78,20 @@ print("\nFonction getSommeColonnes :")
 def test_getSommeColonnes() -> None:
     for i in range(4):
         liste = getCarre2D(3)
-        print(f"{liste}, somme des lignes : {getSommeColonnes(liste)}")
+        print(f"{liste}, somme des colonnes : {getSommeColonnes(liste)}")
     return None
 
 
 test_getSommeColonnes()
+
+print("\nFonction getSommeDiagonale1 :")
+
+
+def test_getSommeDiagonale1() -> None:
+    for i in range(4):
+        liste = getCarre2D(3)
+        print(f"{liste}, somme de la diagonale principale : {getSommeDiagonale1(liste)}")
+    return None
+
+
+test_getSommeDiagonale1()

@@ -75,3 +75,12 @@ def getSommeColonnes(liste: list) -> list:
         for i in range(len(liste)):
             totcolonnes[nb] += liste[i][nb]
     return totcolonnes
+
+
+def getSommeDiagonale1(liste: list) -> int:
+    totdiag1 = 0
+    nb = -1
+    for i in range(len(liste)):
+        nb += 1
+        totdiag1 += liste[i][nb]
+    return totdiag1
