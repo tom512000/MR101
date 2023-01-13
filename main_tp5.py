@@ -11,3 +11,5 @@ print(getPrix(panier, "Poires")) # Devrait afficher 7.12
 print(getPrix(panier, "Clémentines")) # Devrait afficher 5.27
 print(getPrix(panier, "Cerises")) # Devrait afficher 0.0
 
+print("\nFonction getPrixTotal :")
+print(getPrixTotal(panier)) # Devrait afficher 34.57
