@@ -1,4 +1,8 @@
 import random
+from view.Text import Text
+from view.Canvas import Canvas
+from view.TextRect import TextRect
+from view.Color import Color
 
 
 def getRegularArray2D(nl: int, nc: int, mn: int, mx: int) -> list:
@@ -89,7 +93,30 @@ def getSommeDiagonale1(liste: list) -> int:
 def getSommeDiagonale2(liste: list) -> int:
     totdiag2 = 0
     nb = -1
-    for i in range(len(liste)-1, -1, -1):
+    for i in range(len(liste) - 1, -1, -1):
         nb += 1
         totdiag2 += liste[i][nb]
     return totdiag2
+
+
+def dessinerCarre(liste: list) -> None:
+    n = max(liste)
+    tailleligne = len(liste)*100
+    taillecolonnes = len(liste[0])*100
+    cv = Canvas((tailleligne, taillecolonnes))
+    for i in range(len(liste)):
+        for j in range(len(liste[i])):
+            txt = Text((0, 0), str(n))
+            w, h = txt.getSize()
+            # Ajout de la marge h/2
+            w += h
+            h += h
+            # Taille des cadres pour les nombres : (w, h)
+            tr = TextRect((w, h), 'Un Exemple', rect=(w, h))
+            tr.setFill(Color(0, 0, 0))
+    while True:
+        tr.draw(cv)
+    return None
+
+
+dessinerCarre(getCarre2D(5))
