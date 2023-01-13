@@ -13,3 +13,6 @@ print(getPrix(panier, "Cerises")) # Devrait afficher 0.0
 
 print("\nFonction getPrixTotal :")
 print(getPrixTotal(panier)) # Devrait afficher 34.57
+
+print("\nFonction afficherPanier :")
+afficherPanier(panier)
