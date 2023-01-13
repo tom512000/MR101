@@ -27,3 +27,11 @@ ajouterArticle(panier, 'bananes', 2.3)
 afficherPanier(panier)
 ajouterArticle(panier, 'Cerises', 4.1)
 afficherPanier(panier)
+
+print("\nFonction getArticlePlusCher :")
+panier = {"Pommes": 5.27, "Poires": 7.12, "Fraises": 4.98, "Bananes": 3.46, "Oranges": 4.02, "Clémentines": 5.27, "Endives": 1.67, "Laitues": 2.78}
+print("Liste des articles les plus chers : ")
+while len(panier)!=0:
+    a = getArticlePlusCher(panier)
+    print(f"{a:<20}: prix = {getPrix(panier, a)}")
+    supprimerArticle(panier, a)

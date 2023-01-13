@@ -35,3 +35,13 @@ def ajouterArticle(p: dict, a: str, px: float) -> None:
     a = a.title()
     p[a] = px
     return None
+
+
+def getArticlePlusCher(p: dict) -> str:
+    valmax = 0
+    strmax = ''
+    for cle, valeur in p.items():
+        if (valeur > valmax) or ((valeur == valmax) and (cle < strmax)):
+            valmax = valeur
+            strmax = cle
+    return strmax
