@@ -15,5 +15,17 @@ def afficherPanier(p: dict) -> None:
     for element in p:
         print(f"{element:<19}:{p[element]:>9}")
     print('-' * 29)
-    print(f"{'Prix total ':>19}:{getPrixTotal(p):>9}")
+    print(f"{'Prix total ':>19}:{round(getPrixTotal(p), 2):>9}")
     return None
+
+
+def supprimerArticle(p: dict, a: str) -> bool:
+    booleen = False
+    a = a.title()
+    if a in p:
+        test1 = len(p)
+        p.pop(a)
+        test2 = len(p)
+        if test1 != test2:
+            booleen = True
+    return booleen

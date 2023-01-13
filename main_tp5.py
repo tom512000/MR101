@@ -16,3 +16,8 @@ print(getPrixTotal(panier)) # Devrait afficher 34.57
 
 print("\nFonction afficherPanier :")
 afficherPanier(panier)
+
+print("\nFonction supprimerArticle :")
+print(supprimerArticle(panier, 'fraises'))
+afficherPanier(panier)
+print(supprimerArticle(panier, 'Cerises'))
