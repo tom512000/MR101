@@ -29,3 +29,9 @@ def supprimerArticle(p: dict, a: str) -> bool:
         if test1 != test2:
             booleen = True
     return booleen
+
+
+def ajouterArticle(p: dict, a: str, px: float) -> None:
+    a = a.title()
+    p[a] = px
+    return None
